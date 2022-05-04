@@ -1,5 +1,6 @@
 package com.example.guestbook.entity;
 
+import com.example.guestbook.dto.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"title", "content", "writer"})
-public class GuestBook {
+public class GuestBook extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
