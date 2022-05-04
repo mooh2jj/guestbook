@@ -36,6 +36,10 @@ dependencies {
     //querydsl 추가
     implementation 'com.querydsl:querydsl-jpa'
     implementation 'com.querydsl:querydsl-apt'
+
+    // 테스트에서 lombok 사용
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
 //def querydslDir = 'src/main/generated'

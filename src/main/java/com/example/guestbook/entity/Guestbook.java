@@ -8,8 +8,8 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"title", "content", "writer"})
-public class GuestBook extends BaseTimeEntity {
+@ToString(of = {"gno", "title", "content", "writer"})
+public class Guestbook extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class GuestBook extends BaseTimeEntity {
     private String writer;
 
     @Builder
-    public GuestBook(Long gno, String title, String content, String writer) {
+    public Guestbook(Long gno, String title, String content, String writer) {
         this.gno = gno;
         this.title = title;
         this.content = content;
