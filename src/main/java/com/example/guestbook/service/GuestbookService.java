@@ -1,12 +1,14 @@
 package com.example.guestbook.service;
 
 import com.example.guestbook.dto.GuestbookDTO;
+import com.example.guestbook.dto.PageResponse;
 import com.example.guestbook.entity.Guestbook;
 
 public interface GuestbookService {
 
     GuestbookDTO register(GuestbookDTO dto);
 
+    PageResponse list(int pageNo, int pageSize, String sortBy);
     default Guestbook mapToEntity(GuestbookDTO dto) {
         return Guestbook.builder()
                 .id(dto.getId())
