@@ -8,12 +8,12 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"title", "content", "writer"})
-public class GuestBook extends BaseTimeEntity {
+@ToString(of = {"id", "title", "content", "writer"})
+public class Guestbook extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long gno;
+    private Long id;
 
     @Column(length = 100, nullable = false)
     private String title;
@@ -25,10 +25,18 @@ public class GuestBook extends BaseTimeEntity {
     private String writer;
 
     @Builder
-    public GuestBook(Long gno, String title, String content, String writer) {
-        this.gno = gno;
+    public Guestbook(Long id, String title, String content, String writer) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
+    }
+
+    public void changeTitle(String title) {
+        this.title = title;
+    }
+
+    public void changeContent(String content) {
+        this.content = content;
     }
 }
